@@ -122,6 +122,17 @@ if __name__ == '__main__':
             print(sql(sys.stdin.read(), args[0] if args else 'author'))
         elif action == 'capture':
             print(sql('project export -list\nproject export'))
+        elif action == 'adapt-runtime':
+            changed=[]
+            for source in (ROOT/'src').rglob('*'):
+                if source.suffix not in ('.sql','.yaml'):
+                    continue
+                text=source.read_text()
+                old='begin E1_CTRL.e1_release.assert_runtime; end;'
+                if old in text:
+                    source.write_text(text.replace(old,'begin lab_runtime.assert_ready; end;'))
+                    changed.append(str(source.relative_to(ROOT)))
+            print('REVIEW explicit E3 runtime adapter before stage: '+', '.join(changed))
         elif action == 'stage':
             print(sql('project stage -branch-name e3-base'))
         elif action == 'verify':
