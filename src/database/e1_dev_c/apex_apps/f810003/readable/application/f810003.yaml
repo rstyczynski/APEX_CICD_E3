@@ -51,7 +51,7 @@ security:
 
 database-session: 
   parsing-schema: E1_DEV_C
-  initialization-pl/sql-code: 'begin E1_CTRL.e1_release.assert_runtime; end;   '
+  initialization-pl/sql-code: 'begin lab_runtime.assert_ready; end;   '
 
 globalization: 
   primary-language: English (en)
