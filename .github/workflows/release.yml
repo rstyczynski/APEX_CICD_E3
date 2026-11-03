@@ -69,6 +69,9 @@ jobs:
           ! grep -Eq 'ORA-[0-9]+:|PLS-[0-9]+:|SP2-[0-9]+:|ERROR|SEVERE:|Unknown Command' result/deploy.log
       - name: Check retained business data before publication
         run: |
+          # An APEX import can restore the source application's availability.
+          # Reapply native restriction for checks; this is not atomic fencing.
+          "$SQLCL" -nohistory -noupdates -home "$SQLCL_HOME" -S -L /nolog @../controller/sql/restrict.sql
           "$SQLCL" -nohistory -noupdates -home "$SQLCL_HOME" -S -L /nolog @../controller/sql/snapshot.sql "$RUNNER_TEMP/e3-after-$GITHUB_RUN_ID.txt" > "$RUNNER_TEMP/e3-after-$GITHUB_RUN_ID.log" 2>&1
           cmp "$RUNNER_TEMP/e3-before-$GITHUB_RUN_ID.txt" "$RUNNER_TEMP/e3-after-$GITHUB_RUN_ID.txt"
       - name: Verify behavior and publish with native APEX availability
