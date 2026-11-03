@@ -51,7 +51,7 @@ security:
 
 database-session: 
   parsing-schema: E1_DEV_C
-  initialization-pl/sql-code: 'begin lab_runtime.assert_ready; end;   '
+  initialization-pl/sql-code: '    '
 
 globalization: 
   primary-language: English (en)
@@ -116,7 +116,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 4798850
+  version-number: 4823301
 
 substitutions: 
 - # ====== Substitution: APP_NAME ==============================

@@ -103,7 +103,7 @@ wwv_imp_workspace.create_flow(
 ,p_exact_substitutions_only=>'Y'
 ,p_browser_cache=>'N'
 ,p_browser_frame=>'D'
-,p_vpd=>'begin lab_runtime.assert_ready; end;   '
+,p_vpd=>'    '
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
@@ -111,7 +111,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_value_01=>'APEX Delivery Laboratory'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
-,p_version_scn=>4798850
+,p_version_scn=>4823301
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -2980,4 +2980,4 @@ prompt  ...done
 
 
 
--- sqlcl_snapshot {"hash":"7d3d634589cef9ebc41f6f774168555043474baf","type":"APEX_APPLICATIONS","name":"f810003","schemaName":"E1_DEV_C","sxml":""}
+-- sqlcl_snapshot {"hash":"01a67894ff0e5e5dafd8207bb693f792d8ada0e9","type":"APEX_APPLICATIONS","name":"f810003","schemaName":"E1_DEV_C","sxml":""}
