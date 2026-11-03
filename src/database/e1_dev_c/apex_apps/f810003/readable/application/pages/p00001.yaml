@@ -1,0 +1,259 @@
+---
+# ====== Page: Home ==========================================
+id: 1
+identification: 
+  name: Home
+  alias: HOME
+  title: APEX Delivery Laboratory
+
+appearance: 
+  page-mode: Normal
+  page-template: Theme Default
+  template-options: 
+  - '#DEFAULT#'
+
+navigation-menu: 
+  override-user-interface-level: false
+
+navigation: 
+  cursor-focus: Do not focus cursor
+  warn-on-unsaved-changes: true
+
+security: 
+  authentication: Page Requires Authentication
+  deep-linking: Application Default
+  page-access-protection: Arguments Must Have Checksum
+  form-auto-complete: Off
+  browser-cache: Application Default
+
+session-management: 
+  rejoin-sessions: Application Default
+
+advanced: 
+  enable-duplicate-page-submissions: No - Prevent page from being re-posted
+  reload-on-submit: Only for Success
+
+server-cache: 
+  caching: Disabled
+
+regions: 
+- # ====== Region: Hello World - Working Copy ==================
+  id: 7053722385885099
+  identification: 
+    name: Hello World - Working Copy
+    type: Static Content
+
+  layout: 
+    sequence: 10
+    parent-region: No Parent
+    slot: REGION_POSITION_01
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+
+  appearance: 
+    template: Hero
+    template-options: 
+    - '#DEFAULT#'
+    render-components: Above Content
+
+  accessibility: 
+    use-landmark: true
+    landmark-type: Template Default
+
+  image: 
+    file-url: '#APP_FILES#icons/app-icon-512.png'
+
+  advanced: 
+    region-display-selector: false
+    exclude-title-from-translation: false
+
+  customization: 
+    customizable: Not Customizable By End Users
+
+  attributes: 
+    settings: 
+      output-as: HTML
+      expand-shortcuts: false
+
+page-items: 
+- # ====== Page Item: P1_HELLO_CHOICE ==========================
+  id: 3300743782143616
+  identification: 
+    name: P1_HELLO_CHOICE
+    type: Select List
+
+  label: 
+    label: Hello
+    alignment: Left
+
+  settings: 
+    page-action-on-selection: None
+
+  multiple-values: 
+    type: No
+
+  layout: 
+    sequence: 20
+    region: Hello World - Working Copy # 7053722385885099
+    slot: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional - Floating
+    template-options: 
+    - '#DEFAULT#'
+    height: 1
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: SQL Query
+    sql-query: select entry_text d, entry_id r from hello_entries where active='Y' order by entry_text,entry_id
+    display-extra-values: true
+    display-null-value: true
+    null-display-value: Configured Hello default
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+
+  session-state: 
+    storage: Per Session (Persistent)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: true
+    restricted-characters: All characters can be saved.
+
+- # ====== Page Item: P1_WORLD_CHOICE ==========================
+  id: 3300844088143617
+  identification: 
+    name: P1_WORLD_CHOICE
+    type: Select List
+
+  label: 
+    label: World
+    alignment: Left
+
+  settings: 
+    page-action-on-selection: None
+
+  multiple-values: 
+    type: No
+
+  layout: 
+    sequence: 30
+    region: Hello World - Working Copy # 7053722385885099
+    slot: BODY
+    alignment: Left
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    label-column-span: Page Template Default
+
+  appearance: 
+    template: Optional - Floating
+    template-options: 
+    - '#DEFAULT#'
+    height: 1
+
+  validation: 
+    value-required: false
+
+  list-of-values: 
+    type: SQL Query
+    sql-query: select entry_text d, entry_id r from world_entries where active='Y' order by entry_text,entry_id
+    display-extra-values: true
+    display-null-value: true
+    null-display-value: Configured World default
+
+  advanced: 
+    warn-on-unsaved-changes: Page Default
+
+  source: 
+    type: Null
+    used: Only when current value in session state is null
+
+  session-state: 
+    storage: Per Session (Persistent)
+
+  quick-picks: 
+    show-quick-picks: false
+
+  security: 
+    session-state-protection: Unrestricted
+    store-value-encrypted-in-session-state: true
+    restricted-characters: All characters can be saved.
+
+buttons: 
+- # ====== Button: CREATE_GREETING =============================
+  id: 7835399512408769
+  identification: 
+    button-name: CREATE_GREETING
+    label: Create greeting
+
+  layout: 
+    sequence: 10
+    region: Hello World - Working Copy # 7053722385885099
+    slot: BODY
+    start-new-layout: false
+    start-new-row: true
+    column: Automatic
+    new-column: true
+    column-span: Automatic
+    alignment: Left center
+
+  appearance: 
+    button-template: Text
+    hot: false
+    template-options: 
+    - '#DEFAULT#'
+
+  behavior: 
+    action: Submit Page
+    execute-validations: true
+    show-processing: false
+    warn-on-unsaved-changes: Do Not Check
+
+processes: 
+- # ====== Process: Save greeting snapshot =====================
+  id: 7835550857408770
+  identification: 
+    name: Save greeting snapshot
+    type: Execute Code
+    execution-chain: None
+
+  source: 
+    location: Local Database
+    language: PL/SQL
+    pl/sql-code: "declare v varchar2(261 char); begin v:=lab_runtime.record_greeting(:P1_HELLO_CHOICE,:P1_WORLD_CHOICE); apex_application.g_print_success_message:=apex_escape.html(v)||' — saved to history.'; end;"
+
+  execution: 
+    sequence: 10
+    point: After Submit
+    run-process: Once Per Page Visit (default)
+
+  error: 
+    display-location: Inline in Notification
+
+  server-side-condition: 
+    when-button-pressed: CREATE_GREETING # 7835399512408769
+

@@ -1,0 +1,291 @@
+---
+- # ====== List: Navigation Menu ===============================
+  id: 7041087460885045
+  identification: 
+    name: Navigation Menu
+
+  subscription: 
+    version-number: 3349052
+
+  source: 
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: Hello entries ================================
+    id: 3281200056095889
+    label: 
+      label: Hello entries
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 30
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 100
+      - 101
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:100:&APP_SESSION.::&DEBUG.:::'
+        page: 100 # Hello entries
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: World entries ================================
+    id: 3281577440091966
+    label: 
+      label: World entries
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 50
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 200
+      - 201
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:200:&APP_SESSION.::&DEBUG.:::'
+        page: 200 # World entries
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Hello configuration ==========================
+    id: 3294324847100160
+    label: 
+      label: Hello configuration
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 40
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 110
+      - 111
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:110:&APP_SESSION.::&DEBUG.:::'
+        page: 110 # Hello configuration
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: World configuration ==========================
+    id: 3294915394100751
+    label: 
+      label: World configuration
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 60
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 210
+      - 211
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:210:&APP_SESSION.::&DEBUG.:::'
+        page: 210 # World configuration
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Installed components =========================
+    id: 3465491005333432
+    label: 
+      label: Installed components
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 70
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 20
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
+        page: 20 # Installed components
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Home =========================================
+    id: 7052857438885097
+    label: 
+      label: Home
+
+    icon: 
+      image/icon-css-classes: fa-home
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+        page: 1 # Home
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+  - # ====== Entry: Greeting history =============================
+    id: 7841257357419042
+    label: 
+      label: Greeting history
+
+    icon: 
+      image/icon-css-classes: fa-table
+
+    layout: 
+      sequence: 20
+
+    is-current: 
+      type: Pages
+      pages: 
+      - 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:10:&APP_SESSION.::&DEBUG.:::'
+        page: 10 # Greeting history - Main checkpoint
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+- # ====== List: Navigation Bar ================================
+  id: 7042264624885069
+  identification: 
+    name: Navigation Bar
+
+  subscription: 
+    version-number: 3253340
+
+  source: 
+    type: Static Values
+
+  entries: 
+  - # ====== Entry: &APP_USER. ===================================
+    id: 7054340645885104
+    label: 
+      label: '&APP_USER.'
+
+    icon: 
+      image/icon-css-classes: fa-user
+
+    layout: 
+      sequence: 10
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: '#'
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+      2.: has-username
+
+  - # ====== Entry: --- ==========================================
+    id: 7054892363885105
+    label: 
+      label: '---'
+
+    layout: 
+      sequence: 20
+      parent-entry: '&APP_USER.' # 7054340645885104
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: separator
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    server-side-condition: 
+      type: User is Authenticated (not public)
+
+  - # ====== Entry: Sign Out =====================================
+    id: 7055237105885105
+    label: 
+      label: Sign Out
+
+    icon: 
+      image/icon-css-classes: fa-sign-out
+
+    layout: 
+      sequence: 30
+      parent-entry: '&APP_USER.' # 7054340645885104
+
+    is-current: 
+      type: Target Page
+
+    link: 
+      target: '&LOGOUT_URL.'
+
+    click-counting: 
+      count-clicks: false
+
+    user-defined-attributes: 
+      translatable: false
+
+    server-side-condition: 
+      type: User is Authenticated (not public)
+

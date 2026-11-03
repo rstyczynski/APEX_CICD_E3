@@ -1,0 +1,105 @@
+---
+- # ====== Breadcrumb: Breadcrumb ==============================
+  id: 7040585034885043
+  identification: 
+    name: Breadcrumb
+
+  entries: 
+  - # ====== Entry: Hello entries ================================
+    id: 3285244796095898
+    identification: 
+      name: Hello entries
+      page-number: 100
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:100:&APP_SESSION.::&DEBUG.:::'
+        page: 100 # Hello entries
+
+  - # ====== Entry: World entries ================================
+    id: 3285504442091976
+    identification: 
+      name: World entries
+      page-number: 200
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:200:&APP_SESSION.::&DEBUG.:::'
+        page: 200 # World entries
+
+  - # ====== Entry: Hello configuration ==========================
+    id: 3298236726100168
+    identification: 
+      name: Hello configuration
+      page-number: 110
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:110:&APP_SESSION.::&DEBUG.:::'
+        page: 110 # Hello configuration
+
+  - # ====== Entry: World configuration ==========================
+    id: 3298833577100757
+    identification: 
+      name: World configuration
+      page-number: 210
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:210:&APP_SESSION.::&DEBUG.:::'
+        page: 210 # World configuration
+
+  - # ====== Entry: Installed components =========================
+    id: 3466410662333437
+    identification: 
+      name: Installed components
+      page-number: 20
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
+        page: 20 # Installed components
+
+  - # ====== Entry: Home =========================================
+    id: 7040713027885044
+    identification: 
+      name: Home
+      page-number: 1
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+        page: 1 # Home
+
+  - # ====== Entry: Greeting history =============================
+    id: 7842186865419047
+    identification: 
+      name: Greeting history
+      page-number: 10
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:10:&APP_SESSION.::&DEBUG.:::'
+        page: 10 # Greeting history - Main checkpoint
+

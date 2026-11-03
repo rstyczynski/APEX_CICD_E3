@@ -1,0 +1,46 @@
+---
+- # ====== Static Application File: icons/app-icon-144-rounded.p
+  id: 7043359346885077
+  identification: 
+    file-name: icons/app-icon-144-rounded.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-32.png ======
+  id: 7043651380885078
+  identification: 
+    file-name: icons/app-icon-32.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-192.png =====
+  id: 7043929957885078
+  identification: 
+    file-name: icons/app-icon-192.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-256-rounded.p
+  id: 7044211094885078
+  identification: 
+    file-name: icons/app-icon-256-rounded.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+
+- # ====== Static Application File: icons/app-icon-512.png =====
+  id: 7044549713885080
+  identification: 
+    file-name: icons/app-icon-512.png
+
+  attributes: 
+    mime-type: image/png
+    file-character-set: Unicode UTF-8
+

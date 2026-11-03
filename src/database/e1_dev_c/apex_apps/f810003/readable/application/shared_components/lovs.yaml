@@ -1,0 +1,41 @@
+---
+- # ====== List of Values: HELLO_ENTRIES.ENTRY_TEXT ============
+  id: 3288445478100153
+  identification: 
+    name: HELLO_ENTRIES.ENTRY_TEXT
+
+  subscription: 
+    version-number: 3322208
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: HELLO_ENTRIES
+
+  column-mapping: 
+    return: ENTRY_ID
+    display: ENTRY_TEXT
+    default-sort: ENTRY_TEXT
+    sort-direction: Ascending (Nulls Last)
+
+- # ====== List of Values: WORLD_ENTRIES.ENTRY_TEXT ============
+  id: 3288970560100745
+  identification: 
+    name: WORLD_ENTRIES.ENTRY_TEXT
+
+  subscription: 
+    version-number: 3329887
+
+  source: 
+    location: Local Database
+    type: Table / View
+    table-owner: Parsing Schema
+    table-name: WORLD_ENTRIES
+
+  column-mapping: 
+    return: ENTRY_ID
+    display: ENTRY_TEXT
+    default-sort: ENTRY_TEXT
+    sort-direction: Ascending (Nulls Last)
+
