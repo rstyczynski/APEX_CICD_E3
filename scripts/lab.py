@@ -80,7 +80,7 @@ def deploy(archive):
     # Exact fixed disposable target; never choose UAT via a dispatch input.
     if (c['target_schema'], c['target_app']) != ('E3_TARGET', 810203):
         raise ValueError('Unexpected E.3 target')
-    print(sql("set define on\ndefine DEFAULTS_FILE=utils/properties/e3.properties\n"
+    print(sql(f'set define on\ndefine DEFAULTS_FILE="{ROOT / "utils/properties/e3.properties"}"\n'
               + f'project deploy -file "{archive}"', 'target'))
 
 
