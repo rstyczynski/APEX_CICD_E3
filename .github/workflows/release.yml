@@ -48,7 +48,7 @@ jobs:
         run: |
           "$SQLCL" -nohistory -noupdates -home "$SQLCL_HOME" -S -L /nolog @../controller/sql/verify.sql > result/verify.log 2>&1
           cat result/verify.log
-          grep -Eq 'Errors:[[:space:]]*0([[:space:]]|$)' result/verify.log
+          grep -Eq 'Errors:[[:space:]]*0([^0-9]|$)' result/verify.log
           ! grep -Eq 'ORA-[0-9]+:|PLS-[0-9]+:|SP2-[0-9]+:|No database connection|Unknown Command' result/verify.log
       - name: Package selected Git state with SQLcl PROJECT
         run: |

@@ -16,7 +16,7 @@ end;
 begin
   apex_util.set_security_group_id(apex_util.find_security_group_id('E3_TARGET'));
   apex_application_admin.set_application_status(
-    p_application_id => 810203, p_application_status => 'AVAILABLE');
+    p_application_id => 810203, p_application_status => apex_application_admin.c_app_available);
   commit;
 end;
 /
