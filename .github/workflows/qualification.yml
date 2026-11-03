@@ -82,9 +82,4 @@ jobs:
           if-no-files-found: warn
       - name: Remove private job material
         if: always()
-        env:
-          PRIVATE_JOB_DIR: ${{ steps.native.outputs.private_dir }}
-        run: |
-          if [[ -n "$PRIVATE_JOB_DIR" && "$PRIVATE_JOB_DIR" == "$RUNNER_TEMP/"* ]]; then
-            rm -rf -- "$PRIVATE_JOB_DIR"
-          fi
+        run: rm -rf -- "$RUNNER_TEMP/e3-private-$GITHUB_RUN_ID"
