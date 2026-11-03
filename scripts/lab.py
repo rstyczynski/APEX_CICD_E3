@@ -54,11 +54,15 @@ def verify():
 
 def snapshot():
     # JSON lines stay private; do not upload business data in workflow artifacts.
-    return sql("""set heading off pagesize 0 feedback off linesize 32767
-select 'H|'||history_id||'|'||actor_name||'|'||greeting_text||'|'||to_char(recorded_at,'YYYY-MM-DD HH24:MI:SS.FF6') from greeting_history order by history_id;
-select 'HC|'||config_id||'|'||prefix||'|'||default_entry_id from hello_config order by config_id;
-select 'WC|'||config_id||'|'||prefix||'|'||default_entry_id from world_config order by config_id;
-""", 'target')
+    tables = [('greeting_history','greeting_id'), ('hello_entries','entry_id'),
+              ('world_entries','entry_id'), ('hello_config','config_id'),
+              ('world_config','config_id'), ('lab_components','component'),
+              ('lab_state','state_key')]
+    body='set heading off pagesize 0 feedback off linesize 32767 long 1000000 longchunksize 32767\n'
+    for table, key in tables:
+        body += f"select '{table}|'||json_object(*) from {table} order by {key};\n"
+    return sql(body, 'target')
+
 
 
 def build(version):

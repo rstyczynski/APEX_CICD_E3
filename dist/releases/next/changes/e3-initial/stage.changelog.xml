@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+<include file="e1_dev_c/package_specs/lab_runtime.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/greeting_history.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/hello_config.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/hello_entries.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/lab_components.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/lab_state.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/world_config.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/tables/world_entries.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/package_bodies/lab_runtime.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/greeting_history_immutable.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/greeting_history_insert_guard.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/hello_config_guard.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/hello_config_no_delete.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/hello_entries_guard.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/hello_entries_no_delete.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/world_config_guard.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/world_config_no_delete.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/world_entries_guard.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/triggers/world_entries_no_delete.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/ref_constraints/hello_config.hello_entries.sql" relativeToChangelogFile="true"/>
+<include file="e1_dev_c/ref_constraints/world_config.world_entries.sql" relativeToChangelogFile="true"/>
+<include file="_custom/e3_initial_data.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>
