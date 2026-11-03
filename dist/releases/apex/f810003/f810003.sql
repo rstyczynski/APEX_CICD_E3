@@ -103,7 +103,7 @@ wwv_imp_workspace.create_flow(
 ,p_exact_substitutions_only=>'Y'
 ,p_browser_cache=>'N'
 ,p_browser_frame=>'D'
-,p_vpd=>'begin E1_CTRL.e1_release.assert_runtime; end;   '
+,p_vpd=>'begin lab_runtime.assert_ready; end;   '
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
