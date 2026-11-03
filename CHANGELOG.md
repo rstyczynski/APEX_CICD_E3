@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/rstyczynski/APEX_CICD_E3/compare/v1.0.2...v1.0.3) (2026-11-03)
+
+
+### Bug Fixes
+
+* clear native initialization and validate APEX sessions ([#7](https://github.com/rstyczynski/APEX_CICD_E3/issues/7)) ([97d8db1](https://github.com/rstyczynski/APEX_CICD_E3/commit/97d8db1e476a87d33aa16b143922285ef19a827f))
+
 ## [1.0.2](https://github.com/rstyczynski/APEX_CICD_E3/compare/v1.0.1...v1.0.2) (2026-11-03)
 
 
