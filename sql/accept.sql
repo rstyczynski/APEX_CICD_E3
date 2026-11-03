@@ -10,6 +10,10 @@ begin
   select count(*) into n from apex_application_page_regions
    where application_id=810203 and page_id=1 and region_name='Hello World - Git pipeline';
   if n <> 1 then raise_application_error(-20932,'Expected Home heading missing'); end if;
+  apex_util.set_security_group_id(apex_util.find_security_group_id('E3_TARGET'));
+  -- Native APEX executes the application's Initialization PL/SQL Code.
+  apex_session.create_session(p_app_id=>810203,p_page_id=>1,p_username=>'VERIFIER');
+  apex_session.delete_session;
 end;
 /
 -- APEX availability is inherited from the E.2 native approach.

@@ -51,7 +51,6 @@ security:
 
 database-session: 
   parsing-schema: E1_DEV_C
-  initialization-pl/sql-code: '    '
 
 globalization: 
   primary-language: English (en)
@@ -116,7 +115,7 @@ attributes:
   auto-dismiss-success-messages: false
 
 subscription: 
-  version-number: 4823301
+  version-number: 4831292
 
 substitutions: 
 - # ====== Substitution: APP_NAME ==============================
