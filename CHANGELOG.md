@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/rstyczynski/APEX_CICD_E3/compare/v1.0.4...v1.0.5) (2026-11-04)
+
+
+### Bug Fixes
+
+* require specific missing changeset diagnostics ([eac24de](https://github.com/rstyczynski/APEX_CICD_E3/commit/eac24dedab3f611ef09b0196623cfabf674e7e1c))
+
 ## [1.0.4](https://github.com/rstyczynski/APEX_CICD_E3/compare/v1.0.3...v1.0.4) (2026-11-03)
 
 
